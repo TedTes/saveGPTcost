@@ -3,3 +3,4 @@ uvicorn
 redis
 sentence-transformers
 numpy
+redis>=4.2.0
