@@ -94,7 +94,7 @@ docs/_build/
 .vscode/
 
 # Virtual environment
-venv/**
+venv/
 env/
 ENV/
 
