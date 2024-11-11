@@ -25,9 +25,9 @@ async def process_prompt(prompt: str = Body(...)):
         if similarity_score >= similarity_threshold:
           return {"cached":True, "response":cached_data['response'],"similarity":similarity_score}
     response = f"Generated response for prompt:{prompt}"
-
+   
     cache_key = f"prompt:{uuid.uuid4()}"
-    r.set(cache_key,json.dumps({
+    await r.set(cache_key,json.dumps({
        "prompt":prompt,
        "embedding":new_embedding.cpu().tolist(),
        "response":response
